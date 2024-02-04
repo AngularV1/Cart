@@ -1,0 +1,82 @@
+<div class="container mt-5">
+
+    <div class="row">
+
+        <!-- Product List -->
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    Products
+                </div>
+                <!-- {{productsArray | json}} -->
+                <div class="card-body">
+                    <!-- Product Table -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Sample Product Row -->
+                            <tr *ngFor="let product of productsArray">
+                                <td>{{product.id}}</td>
+                                <td>{{product.name}}</td>
+                                <td>{{product.price | currency: 'USD' : 'symbol-narrow' : '0.2-2'}}</td>
+                                <td>
+                                    <button class="btn btn-primary btn-sm" (click)="addToCart(product)">Add to Cart</button>
+                                </td>
+                            </tr>
+                            <!-- Add more product rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Shopping Cart Summary -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Shopping Cart
+                </div>
+                <div class="card-body">
+                    <!-- Cart Table -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Sample Cart Item -->
+                            <tr *ngFor="let product of cart">
+                                <td>{{product.name}}</td>
+                                <td>{{product.qty}}</td>
+                                <td>{{product.price | currency: 'USD' : 'symbol-narrow' : '0.2-2'}}</td>
+                                <td>
+                                    <button class="btn btn-danger btn-sm" (click)="removeFromCart(product)">Remove</button>
+                                </td>
+                            </tr>
+                            <!-- Add more cart item rows as needed -->
+                        </tbody>
+                    </table>
+
+                    <!-- Order Summary -->
+                    <div class="text-right">
+                        <h5>Total: <span id="total-amount">0</span></h5>
+                        <button class="btn btn-success" routerLink="/payments">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
