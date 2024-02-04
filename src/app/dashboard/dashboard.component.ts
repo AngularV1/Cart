@@ -41,6 +41,8 @@ export class DashboardComponent implements OnInit {
     }
   ]
   cart: any = [];
+  totalAmount: number = 0;
+
   
   ngOnInit(): void {
   }
@@ -52,6 +54,8 @@ export class DashboardComponent implements OnInit {
       product.qty = 1;
       this.cart.push(product);
     }
+    this.calculateTotalAmount();
+
   }
   removeFromCart(product: any) {
     const index = this.cart.findIndex((el: any) => el.id === product.id);
@@ -61,6 +65,10 @@ export class DashboardComponent implements OnInit {
       product.qty = 1;
       this.cart.splice(index, 1);
     }
+    this.calculateTotalAmount();  // Call the method to update total amount
   }
-  
-}
+
+  calculateTotalAmount() {
+    this.totalAmount = this.cart.reduce((total: number, product: any) => total + (product.price * product.qty), 0);
+  }
+  }

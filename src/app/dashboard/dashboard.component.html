@@ -70,7 +70,7 @@
 
                     <!-- Order Summary -->
                     <div class="text-right">
-                        <h5>Total: <span id="total-amount">0</span></h5>
+                        <h5>Total: <span id="total-amount">{{totalAmount| currency: 'USD' : 'symbol-narrow' : '0.2-2'}}</span></h5>
                         <button class="btn btn-success" routerLink="/payments">Checkout</button>
                     </div>
                 </div>
