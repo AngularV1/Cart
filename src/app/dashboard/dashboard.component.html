@@ -26,6 +26,7 @@
                                 <td>{{product.id}}</td>
                                 <td>{{product.name}}</td>
                                 <td>{{product.price | currency: 'USD' : 'symbol-narrow' : '0.2-2'}}</td>
+                                <td>{{product.category}}</td>
                                 <td>
                                     <button class="btn btn-primary btn-sm" (click)="addToCart(product)">Add to Cart</button>
                                 </td>
