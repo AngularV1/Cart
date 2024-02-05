@@ -8,6 +8,10 @@ import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CommonModule } from '@angular/common';
 import { PaymentsComponent } from './payments/payments.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { HomeComponent } from './home/home.component';
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -15,9 +19,12 @@ import { PaymentsComponent } from './payments/payments.component';
     LoginComponent,
     SignupComponent,
     DashboardComponent,
-    PaymentsComponent
+    PaymentsComponent,
+    ProductDetailsComponent,
+    HomeComponent
   ],
   imports: [
+    RouterModule.forRoot([]),
     BrowserModule,
     CommonModule,
     AppRoutingModule

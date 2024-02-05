@@ -1,0 +1,12 @@
+/* dashboard.component.css */
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  /* Adjust as needed */
+/* dashboard.component.css */
+.btn-primary:hover {
+    background-color: #007bff;
+  }
+    
