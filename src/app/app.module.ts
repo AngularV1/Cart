@@ -11,6 +11,7 @@ import { PaymentsComponent } from './payments/payments.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { RouterModule } from '@angular/router';
     DashboardComponent,
     PaymentsComponent,
     ProductDetailsComponent,
-    HomeComponent
+    HomeComponent,
+    SearchBarComponent
   ],
   imports: [
     RouterModule.forRoot([]),

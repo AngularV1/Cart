@@ -1,5 +1,7 @@
 <!-- home.component.html -->
 
+
+
 <div class="container mt-4">
     <div class="jumbotron text-center">
       <!-- Navigation Links -->
@@ -8,9 +10,22 @@
         <a routerLink="/dashboard" class="btn btn-success ml-2">Dashboard</a>
         <a routerLink="/payments" class="btn btn-info ml-2">Payments</a>
       </div>
-  
+  <!-- Search Bar -->
+  <app-search-bar></app-search-bar>
+
       <h1>Welcome to Your Cart!</h1>
       <p class="lead">Discover amazing products and start shopping today.</p>
+      <!-- Categories -->
+      <div class="row mt-3">
+        <div *ngFor="let category of categories" class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ category.name }}</h5>
+              <!-- You can add more details or links if needed -->
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   
