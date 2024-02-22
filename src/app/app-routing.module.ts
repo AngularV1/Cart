@@ -12,24 +12,13 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'payments', component: PaymentsComponent },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
+
   {
     path: 'signup',
     component: SignupComponent
   },
   {
-    path: 'dashboard',
-    component: DashboardComponent
-  },
-  {
-    path: 'payments',
-    component: PaymentsComponent
-  },
-  {
-    path: 'product-details',
+    path: 'product-details/:id',
     component: ProductDetailsComponent
   },
   {

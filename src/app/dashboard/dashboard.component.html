@@ -31,7 +31,7 @@
                             <!-- Sample Product Row -->
                             <tr *ngFor="let product of productsArray">
                                 <td>{{product.id}}</td>
-                                <td>{{product.name}}</td>
+                                <td [routerLink]="['/product-details', product.id]">{{product.name}}</td>
                                 <td>{{product.price | currency: 'USD' : 'symbol-narrow' : '0.2-2'}}</td>
                                 <td>{{product.category}}</td>
                                 <td>
@@ -64,7 +64,7 @@
                         </thead>
                         <tbody>
                             <!-- Sample Cart Item -->
-                            <tr *ngFor="let product of cart">
+                            <tr *ngFor="let product of productService.cart">
                                 <td>{{product.name}}</td>
                                 <td>{{product.qty}}</td>
                                 <td>{{product.price | currency: 'USD' : 'symbol-narrow' : '0.2-2'}}</td>
@@ -78,7 +78,7 @@
 
                     <!-- Order Summary -->
                     <div class="text-right">
-                        <h5>Total: <span id="total-amount">{{totalAmount| currency: 'USD' : 'symbol-narrow' : '0.2-2'}}</span></h5>
+                        <h5>Total: <span id="total-amount">{{productService.totalAmount| currency: 'USD' : 'symbol-narrow' : '0.2-2'}}</span></h5>
                         <button class="btn btn-success" routerLink="/payments">Checkout</button>
                     </div>
                 </div>
